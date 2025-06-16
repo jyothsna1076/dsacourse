@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Learn DSA with Jyothsna</title>
+  <title>Learn DSA </title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -94,12 +94,54 @@
       color: #888;
       margin: 50px 0 20px;
     }
+
+    /* Cards Section */
+    .card-section {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 40px 0;
+    }
+    .info-card {
+      background-color: #1e1e1e;
+      border: 2px solid #e50914;
+      border-radius: 14px;
+      padding: 25px;
+      flex: 1 1 260px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
+    }
+    .info-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #e50914;
+    }
+    .info-card .big-text {
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .info-card a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background-color: #e50914;
+      color: white;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    .info-card a:hover {
+      background-color: #ff1f1f;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>👩‍💻 Learn DSA with Jyothsna</h1>
+    <h1>👩‍💻 Learn DSA </h1>
     <p>One-month course • Affordable • Doubt support included 💬</p>
   </header>
 
@@ -119,32 +161,58 @@
       <li>💬 Daily practice questions + doubt-clearing support</li>
       <li>🧰 Resume guidance and mock interviews</li>
     </ul>
-<h2>🗓️ Course Start Date</h2>
-<p><strong>Starts this Saturday — 21st June, 2025</strong></p>
-<p>Join early to secure your seat before the batch fills up!</p>
+
+    <h2>🗓️ Course Start Date</h2>
+    <p><strong>Starts this Saturday — 21st June, 2025</strong></p>
+    <p>Join early to secure your seat before the batch fills up!</p>
+
+    <div class="card-section">
+      <div class="info-card">
+        <h3>⏳ Starts In</h3>
+        <div class="big-text" id="countdown">Loading...</div>
+      </div>
+      <div class="info-card">
+        <h3>📲 Contact to Secure your Seat</h3>
+        
+        <a href="https://wa.me/917671000642?text=Hi%20Jyothsna%2C%20I%27m%20interested%20in%20your%20DSA%20course!" target="_blank">Click to DM</a>
+      </div>
+    </div>
+
+    <h2>🔥 Seats Left</h2>
+    <p><strong>🚀 Only 14 spots left!</strong> Grab yours before it's gone. This bootcamp only has limited seats. Don’t miss out!</p>
 
     <h2>💸 Course Fee</h2>
-    <p><strong>₹300 for 30 days</strong> — that’s just ₹10/day 🔥</p>
-    <p><em>What are you waiting for? Let’s invest in your career today 💼</em></p>
+    <p><strong>Just ₹300 for 30 days</strong> — That’s only ₹10/day 💰 (Less than your chai!)</p>
+    <p><em>Let’s invest in your career today 💼</em></p>
 
-    <h2>⚠️ Limited Seats</h2>
-    <p>This course is for a small, focused batch. Please join only if genuinely interested 🙏</p>
-
-<h2>📞 Contact Me</h2>
-<p>Have questions or want to join? I’d love to hear from you!</p>
-
-<a href="https://wa.me/917671000642?text=Hi%20Jyothsna%2C%20I%27m%20interested%20in%20your%20DSA%20course!" class="button" target="_blank">
-  📲 DM Me on WhatsApp
-</a>
-
-
-
-
+ 
   </div>
 
   <footer>
     © 2025 Jyothsna's DSA Bootcamp • Made with ❤️ in India
   </footer>
+
+  <script>
+    // Countdown logic
+    const countdownEl = document.getElementById("countdown");
+    const courseDate = new Date("June 21, 2025 00:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const gap = courseDate - now;
+
+      const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+
+      if (gap > 0) {
+        countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      } else {
+        countdownEl.textContent = "🎉 Course Started!";
+      }
+    }, 1000);
+  </script>
 
 </body>
 </html>
